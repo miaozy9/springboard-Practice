@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Document</title>
+  
+</head>
+
+<body>
+<h1>Movie rating App</h1>
+<div>
+    <form id="movieForm">
+    <div>
+        <label for="Movie title"></label>
+        <input type="text"  placeholder="Enter the movie title" id="title"> 
+    </div>
+    <div>
+        <label for="rating"></label>
+        <input type="range" id="rating" value="5" min="1" max="10" oninput="this.nextElementSibling.value = this.value">
+        <output>5</output>
+    </div>
+    <div>
+        <button type="submit">Submit!</button>
+    </div>
+    </form>
+</div>
+
+<table id="movieTable" class="tablesorter"> 
+    <thead> 
+        <tr>
+            <th scope="col">Title</th>
+            <th scope="col">Rating</th>
+            <th scope="col">Delete</th>
+        </tr>
+    </thead>
+    <tbody>
+
+    </tbody>
+    
+</table>
+
+<script src="https://code.jquery.com/jquery-3.3.1.js"></script>
+<script>
+    console.log("hey")
+    $(function(){
+        $("#movieForm").on("submit", function(e){
+          e.preventDefault();
+          let title = $("#title").val();
+          if(title.length < 2){
+              alert("Please enter a valid title")
+              return
+          }
+          let rating = $("#rating").val();
+          let movieTable = $('#movieTable')
+          movieTable.append('<tr> ' +
+            '<td class="tdClass">' + title + '</td>' + 
+            '<td class="tdClass">' + rating + '</td>'  +
+            '<td class="tdClass">'+ '<button id="delete" type="button"> Delete </button>' + '</td>' +
+            '</tr>')
+          $("#movieForm").trigger("reset")
+        })
+
+        $("tbody").on('click','#delete',function(e){
+            e.target.closest('tr').remove()
+        })
+
+
+    })
+
+    // let form = document.getElementById("movieForm");
+    // form.addEventListener('submit', function(e){
+    //     console.log("hey")
+    //     e.preventDefault();
+    //     })
+</script>
+</body>
+
+</html>

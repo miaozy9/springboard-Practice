@@ -27,9 +27,9 @@ def capitalize(phrase):
     # print(phrase[i:])
     return phrase[:i] + phrase[i].upper() + phrase[i+1:]
 
-print(capitalize("121   aaa"))
-print(capitalize("121   "))
-print(capitalize("A12321aaa"))
-print(capitalize(""))
+# print(capitalize("121   aaa"))
+# print(capitalize("121   "))
+# print(capitalize("A12321aaa"))
+# print(capitalize(""))
 
 #Now it works even there are spaces or numbers in front of the phrase or there are only non letters in the list :)

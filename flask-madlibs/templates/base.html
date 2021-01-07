@@ -1,0 +1,18 @@
+<!doctype html>
+<html>
+<head>
+  <title>Madlibs Qustionaries</title>
+</head>
+<body>
+  <h1>Madlibs</h1>
+  <form action="/story">
+    {% for pr in prompts %}
+      <p>
+        <label for="input">{{ pr }}</label>
+        <input name="{{ pr }}" name="input">
+      </p>
+    {% endfor %}
+    <button>Submit</button>
+  </form>
+</body>
+</html>

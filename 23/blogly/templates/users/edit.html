@@ -8,7 +8,7 @@
 <body>
   <h1>Edit Users</h1>
 
-  <form action="/users/edit/{{user.id}}" method="POST">
+  <form action="/users/{{user.id}}/edit" method="POST">
     <input type="text" name="first_name" placeholder="name">
     <input type="text" name="last_name" placeholder="last_name">
     <input type="text" name="image_url" placeholder="image_url">

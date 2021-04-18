@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <title>Current Post</title>
+</head>
+
+<body>
+  <h1>Posts info</h1>
+
+  <div>
+  <p>Title: {{ post.title }}</p>
+  <p>Content: {{ post.content}}</p>
+  <p> By {{post.user.full_name}}</p>
+  <p> Created Time: {{post.created_at}}</p>
+
+  <form action="/posts/{{ post.id }}/edit" method="get">
+    <button type="submit">Edit Post</button>
+  </form>
+
+  <form action="/posts/{{ post.id }}/delete" method="post">
+    <button type="submit">Delete Post</button>
+  </form>
+
+  <form action="/users/{{ post.user.id }}">
+    <button type="submit">Back</button>
+  </form>
+
+  </div>
+
+</body>
+
+</html>
